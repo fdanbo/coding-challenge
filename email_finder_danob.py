@@ -76,8 +76,6 @@ class EmailFinder:
         self.driver.quit()
 
     def parse_current_page(self):
-        print self.driver.current_url
-
         # search the raw page source for things that look like email
         # addresses. I grabbed this regex from the internet somewhere -- it'll
         # miss some things like "danob@social.horse" or whatever, but it seems
@@ -120,7 +118,7 @@ class EmailFinder:
 
     def on_email_found(self, email):
         if email not in self.emails_found:
-            print(' {}'.format(email))
+            print(email)
             self.emails_found.add(email)
 
 
